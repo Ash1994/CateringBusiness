@@ -1,10 +1,13 @@
 package com.catering.in.CateringBusinessLogin.user;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @Slf4j
 public class UserController {
@@ -15,10 +18,10 @@ public class UserController {
     }
 
     @GetMapping("user/getById/{id}")
-    private User getUserById(@PathVariable Integer id) {
+    private ResponseEntity<User> getUserById(@PathVariable Integer id) {
         User user = svc.getUserById(id);
         log.info("user:: {}", user);
-        return user;
+        return ResponseEntity.ok().body(user);
     }
 
 

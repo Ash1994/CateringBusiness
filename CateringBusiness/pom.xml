@@ -23,6 +23,7 @@
 	<!-- sub modules -->
 	<modules>
 		<module>CateringBusinessLogin</module>
+		<module>CateringBusinessAuth</module>
 	</modules>
 
 	<dependencies>
