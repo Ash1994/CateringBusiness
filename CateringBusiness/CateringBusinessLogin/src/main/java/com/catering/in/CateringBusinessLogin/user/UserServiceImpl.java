@@ -1,5 +1,6 @@
 package com.catering.in.CateringBusinessLogin.user;
 
+import com.catering.in.CateringBusinessLogin.user.model.User;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -23,5 +24,10 @@ public class UserServiceImpl implements IUserService{
     @Override
     public List<User> getAllUser() {
         return dao.getAllUser();
+    }
+
+    @Override
+    public void saveAll(User user) {
+        dao.saveAll(user);
     }
 }

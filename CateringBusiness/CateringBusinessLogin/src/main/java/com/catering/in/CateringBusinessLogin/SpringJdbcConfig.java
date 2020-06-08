@@ -1,29 +1,32 @@
 package com.catering.in.CateringBusinessLogin;
 
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
-import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
-import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
-
-import javax.sql.DataSource;
 
 @Configuration
 @Slf4j
 public class SpringJdbcConfig {
 
-    @Bean(name = "h2DataSource")
-    public DataSource dataSource() {
-        return new EmbeddedDatabaseBuilder().setType(EmbeddedDatabaseType.H2)
-                .addScript("classpath:schema/schema.sql")
-                .addScript("classpath:schema/data.sql")
-                .build();
-    }
+//    @Bean
+//    CommandLineRunner loadPdfProp(UserServiceDao dao) {
+//        return args -> {
+//            log.info("Loading data in cache");
+//            dao.getUserById(1);
+//            log.info("Loading data in cache completed");
+//        };
+//    }
 
-    @Bean(name = "gatewayDS")
-    public NamedParameterJdbcTemplate gatewayDataTemplate(@Qualifier("h2DataSource") DataSource ds) {
-        return new NamedParameterJdbcTemplate(ds);
-    }
+
+//    @Bean(name = "h2DataSource")
+//    @Primary
+//    public DataSource embeddedDataSource() {
+//        return new EmbeddedDatabaseBuilder().setType(EmbeddedDatabaseType.H2).addScript("classpath:schema.sql")
+//                .build();
+//    }
+
+//    @Bean(name = "gatewayDS")
+//    @ConfigurationProperties(prefix = "spring.documentdatasource")
+//    public DataSource pdfLibDataSource() throws Exception {
+//        return DataSourceBuilder.create().build();
+//    }
 }

@@ -1,5 +1,6 @@
 package com.catering.in.CateringBusinessLogin.user;
 
+import com.catering.in.CateringBusinessLogin.user.model.User;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;
@@ -13,6 +14,7 @@ public class UserRowMapper implements RowMapper<User> {
         user.setFirst_name(resultSet.getString("first_name"));
         user.setLast_name(resultSet.getString("last_name"));
         user.setEmail(resultSet.getString("email"));
+        System.out.println("user::"+user);
         return user;
     }
 }

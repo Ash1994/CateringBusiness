@@ -1,10 +1,19 @@
-package com.catering.in.CateringBusinessLogin.user;
+package com.catering.in.CateringBusinessLogin.user.model;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection= "user")
 public class User {
+
+    @Id
     private int id;
     private String first_name;
     private String last_name;
     private String email;
+
+    public User() {
+    }
 
     public int getId() {
         return id;
