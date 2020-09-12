@@ -17,7 +17,7 @@ public class UserController {
     }
 
     @GetMapping("/")
-    private ResponseEntity<?> siteUp(@PathVariable Integer id) {
+    private ResponseEntity<?> siteUp() {
         log.info("Site Is Ready to Use:: {}");
         return ResponseEntity.ok("Success");
     }
