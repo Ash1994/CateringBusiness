@@ -1,5 +1,12 @@
 server:
   port: 9091
+  servlet:
+    context-path: /api
+    multipart:
+      max-file-size: 256MB
+      max-request-size: 256MB
+      enabled: true
+
 #server.servlet.context-path=/api
 
 #spring.documentdatasource.jdbcUrl=jdbc:h2:mem:testdb
@@ -23,4 +30,5 @@ spring:
     mongodb:
       host: localhost
       port: 27017
-      database: ducat-assignment
+#      database: ducat-assignment
+      database: catering_101
