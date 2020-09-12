@@ -16,6 +16,12 @@ public class UserController {
         this.svc = svc;
     }
 
+    @GetMapping("/")
+    private ResponseEntity<?> siteUp(@PathVariable Integer id) {
+        log.info("Site Is Ready to Use:: {}");
+        return ResponseEntity.ok("Success");
+    }
+
     @GetMapping("/user/getById/{id}")
     private ResponseEntity<User> getUserById(@PathVariable Integer id) {
         User user = svc.getUserById(id);
